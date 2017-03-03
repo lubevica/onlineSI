@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+
+{% block jumbotron_content%}
+<h2 align="center"> AYUDANTES DE DEBERES</h2>
+{% endblock %}
+
+{% block allcontent%}
+
+{%for instance in queryset%}
+<div class='row'>
+	<div class='col-sm-6'>
+        <h3>{{instance.nombre}}</h3>
+        <p>{{instance.correo}}</p>
+        <p>{{instance.horario}}</p>
+        
+ 	</div>
+
+	<div class='col-sm-6'> <img src="{{instance.foto.url}}" class= "img-responsive"></div>
+	</div>
+
+<br><br>
+{%endfor%} 
+
+{% endblock %}

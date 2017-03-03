@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+{% block jumbotron_content%}
+<h2 align="center"> RECURSOS PARA CLASES</h2>
+{% endblock %}
+
+{% block allcontent%}
+
+{%for instance in queryset%}
+<div class='row'>
+  <div class='col-sm-6'>
+        <h3>{{instance.nombre}}</h3>
+        <p>Semana: {{instance.semana}}</p>       
+        
+  </div>
+
+  <div class='col-sm-6'><iframe width="450" height="315" src="{{instance.link}}"frameborder="0" allowfullscreen></iframe></div>
+</div>
+
+<hr>
+
+{%endfor%} 
+{% endblock %}
